@@ -1,0 +1,77 @@
+{
+  "COMPANION_FOLLOW": {
+    "Controls": {
+      "Follow": "Fazer os tokens selecionados seguirem o token sob o cursor ou marcado como alvo",
+      "Stop": "Fazer os tokens selecionados pararem de seguir"
+    },
+    "HUD": {
+      "Follow": "Seguir o token sob o cursor ou marcado como alvo",
+      "Stop": "Fazer este token parar de seguir (Shift + clique também interrompe)"
+    },
+    "Keybindings": {
+      "Follow": {
+        "Name": "Seguir token sob o cursor ou marcado como alvo",
+        "Hint": "Os tokens selecionados começam a seguir o token sob o cursor ou seu alvo atual."
+      },
+      "Stop": {
+        "Name": "Parar de seguir",
+        "Hint": "Os tokens selecionados param de seguir seu líder atual."
+      }
+    },
+    "Settings": {
+      "MovementStyle": {
+        "Name": "Estilo de movimento dos seguidores",
+        "Hint": "Seguir atrás coloca os companheiros atrás do líder. Formação preserva suas posições relativas.",
+        "Trail": "Seguir atrás do líder",
+        "Formation": "Preservar formação"
+      },
+      "CopyFollowers": {
+        "Name": "Copiar seguidores junto com o líder",
+        "Hint": "Quando um token líder for copiado e colado, copia também seus seguidores, preserva a formação e os conecta ao novo líder."
+      },
+      "Snap": {
+        "Name": "Encaixar seguidores na grade",
+        "Hint": "Posiciona o destino dos seguidores no ponto mais próximo da grade."
+      },
+      "Collisions": {
+        "Name": "Respeitar paredes de movimento",
+        "Hint": "Não move um seguidor quando seu destino atravessaria uma parede que bloqueia movimento."
+      },
+      "Orient": {
+        "Name": "Olhar na direção do movimento",
+        "Hint": "Gira os seguidores para a direção em que estão se movendo."
+      },
+      "ManualMove": {
+        "Name": "Parar quando o seguidor for movido manualmente",
+        "Hint": "Mover um seguidor manualmente remove a relação dele com o líder."
+      },
+      "Combat": {
+        "Name": "Comportamento durante combate",
+        "Hint": "Escolha se a relação será pausada, removida ou continuará enquanto houver combate ativo.",
+        "Pause": "Pausar e continuar após o combate",
+        "Detach": "Parar de seguir permanentemente",
+        "Continue": "Continuar seguindo"
+      },
+      "Teleport": {
+        "Name": "Parar de seguir em teletransportes longos",
+        "Hint": "Remove a relação quando o líder realiza um movimento muito grande na mesma Cena. A cópia entre Cenas é tratada separadamente."
+      },
+      "TeleportDistance": {
+        "Name": "Distância de teletransporte",
+        "Hint": "Distância da Cena a partir da qual um movimento é considerado teletransporte."
+      }
+    },
+    "Notifications": {
+      "SelectFollowersAndLeader": "Selecione um ou mais seguidores e depois passe o cursor sobre o líder ou marque-o como alvo.",
+      "ChooseDifferentLeader": "Passe o cursor sobre outro token ou marque-o como alvo para usá-lo como líder.",
+      "NoPermission": "Você não tem permissão para gerenciar todos os tokens selecionados.",
+      "CycleSkipped": "Um token foi ignorado porque essa relação criaria um ciclo de seguidores.",
+      "NowFollowing": "{count} token(s) agora estão seguindo {leader}.",
+      "StoppedFollowing": "{count} token(s) pararam de seguir.",
+      "ManualDetached": "{name} parou de seguir porque foi movido manualmente.",
+      "TeleportDetached": "Os seguidores foram desconectados porque o líder se teletransportou.",
+      "CopyPrepared": "Adicionando {count} seguidor(es) a esta cópia.",
+      "CopyComplete": "{count} seguidor(es) foram conectados novamente ao líder copiado."
+    }
+  }
+}

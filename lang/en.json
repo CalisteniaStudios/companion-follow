@@ -1,0 +1,77 @@
+{
+  "COMPANION_FOLLOW": {
+    "Controls": {
+      "Follow": "Make selected tokens follow the hovered or targeted token",
+      "Stop": "Stop selected tokens from following"
+    },
+    "HUD": {
+      "Follow": "Follow the hovered or targeted token",
+      "Stop": "Stop this token from following (Shift-click also stops)"
+    },
+    "Keybindings": {
+      "Follow": {
+        "Name": "Follow hovered or targeted token",
+        "Hint": "Selected tokens begin following the token under the pointer or your current target."
+      },
+      "Stop": {
+        "Name": "Stop following",
+        "Hint": "Selected tokens stop following their current leader."
+      }
+    },
+    "Settings": {
+      "MovementStyle": {
+        "Name": "Follower movement style",
+        "Hint": "Trail places companions behind the leader. Formation preserves their relative positions.",
+        "Trail": "Trail behind the leader",
+        "Formation": "Preserve formation"
+      },
+      "CopyFollowers": {
+        "Name": "Copy followers with the leader",
+        "Hint": "When a leader token is copied and pasted, copy its followers too, preserve their formation, and reconnect them to the new leader."
+      },
+      "Snap": {
+        "Name": "Snap followers to grid",
+        "Hint": "Place follower destinations on the nearest grid position."
+      },
+      "Collisions": {
+        "Name": "Respect movement walls",
+        "Hint": "Do not move a follower when its destination would cross a movement-blocking wall."
+      },
+      "Orient": {
+        "Name": "Face movement direction",
+        "Hint": "Rotate following tokens to face the direction they move."
+      },
+      "ManualMove": {
+        "Name": "Stop when follower is moved manually",
+        "Hint": "Moving a follower by hand removes its relationship with the leader."
+      },
+      "Combat": {
+        "Name": "Behavior during combat",
+        "Hint": "Choose whether relationships pause, are removed, or continue while combat is active.",
+        "Pause": "Pause and resume after combat",
+        "Detach": "Stop following permanently",
+        "Continue": "Continue following"
+      },
+      "Teleport": {
+        "Name": "Stop following on long teleports",
+        "Hint": "Remove the relationship when the leader makes a very large movement within a Scene. Cross-Scene copy is handled separately."
+      },
+      "TeleportDistance": {
+        "Name": "Teleport distance",
+        "Hint": "Scene distance at which a movement counts as a teleport."
+      }
+    },
+    "Notifications": {
+      "SelectFollowersAndLeader": "Select one or more follower tokens, then hover over or target their leader.",
+      "ChooseDifferentLeader": "Hover over or target a different token to use as the leader.",
+      "NoPermission": "You do not have permission to manage every selected token.",
+      "CycleSkipped": "A token was skipped because that relationship would create a follower loop.",
+      "NowFollowing": "{count} token(s) are now following {leader}.",
+      "StoppedFollowing": "{count} token(s) stopped following.",
+      "ManualDetached": "{name} stopped following because it was moved manually.",
+      "TeleportDetached": "Followers were detached because the leader teleported.",
+      "CopyPrepared": "Adding {count} follower token(s) to this paste.",
+      "CopyComplete": "Reconnected {count} follower token(s) to their copied leader."
+    }
+  }
+}
