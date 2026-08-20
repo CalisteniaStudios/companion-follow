@@ -316,71 +316,6 @@ async function detachManuallyMovedFollower(token, changes, options, userId) {
   ui.notifications.info(format("Notifications.ManualDetached", {name: token.name}));
 }
 
-function addSceneControl(controls) {
-  const followTool = {
-    name: "companionFollow",
-    title: "COMPANION_FOLLOW.Controls.Follow",
-    icon: "fa-solid fa-dog",
-    button: true,
-    visible: true,
-    order: 90,
-    onClick: followFromCanvas,
-    onChange: followFromCanvas
-  };
-  const stopTool = {
-    name: "companionStop",
-    title: "COMPANION_FOLLOW.Controls.Stop",
-    icon: "fa-solid fa-link-slash",
-    button: true,
-    visible: true,
-    order: 91,
-    onClick: stopFromCanvas,
-    onChange: stopFromCanvas
-  };
-
-  if (Array.isArray(controls)) {
-    const tokens = controls.find(control => control.name === "token" || control.name === "tokens");
-    if (tokens?.tools) tokens.tools.push(followTool, stopTool);
-    return;
-  }
-
-  const tokens = controls.tokens ?? controls.token;
-  if (tokens?.tools) {
-    tokens.tools.companionFollow = followTool;
-    tokens.tools.companionStop = stopTool;
-  }
-}
-
-function hudElement(html) {
-  if (html instanceof HTMLElement) return html;
-  return html?.[0] ?? null;
-}
-
-function addHudControl(app, html) {
-  const root = hudElement(html);
-  const token = app.object?.document ?? app.document ?? app.object;
-  const column = root?.querySelector(".col.right");
-  if (!root || !column || !token || root.querySelector(".companion-follow-control")) return;
-
-  const button = document.createElement("div");
-  button.className = "control-icon companion-follow-control";
-  button.dataset.action = "companion-follow";
-  button.title = tokenLink(token) ? localize("HUD.Stop") : localize("HUD.Follow");
-  button.innerHTML = `<i class="fa-solid ${tokenLink(token) ? "fa-link-slash" : "fa-dog"}"></i>`;
-  button.addEventListener("click", async event => {
-    event.preventDefault();
-    event.stopPropagation();
-    if (event.shiftKey || tokenLink(token)) return stopFollowing([token]);
-    const leaderObject = Array.from(game.user.targets ?? [])[0] ?? canvas?.tokens?.hover;
-    const leader = leaderObject?.document;
-    if (!leader || leader.id === token.id) {
-      return ui.notifications.warn(localize("Notifications.ChooseDifferentLeader"));
-    }
-    return establishFollow([token], leader);
-  });
-  column.append(button);
-}
-
 function setPasteFlag(data, key, value) {
   setProperty(data, `flags.${FLAG_SCOPE}.${key}`, value);
 }
@@ -653,9 +588,6 @@ Hooks.once("ready", () => {
     followersOf
   };
 });
-
-Hooks.on("getSceneControlButtons", addSceneControl);
-Hooks.on("renderTokenHUD", addHudControl);
 
 Hooks.on("preUpdateToken", (token, changes, options) => {
   if (moduleOption(options) || !("x" in changes || "y" in changes)) return;
