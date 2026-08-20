@@ -122,6 +122,9 @@ class TokenMock {
 
 const {__testing} = await import("../scripts/companion-follow.mjs");
 
+assert.equal(hooks.has("on:getSceneControlButtons"), false, "the module does not add scene-control buttons");
+assert.equal(hooks.has("on:renderTokenHUD"), false, "the module does not add Token HUD buttons");
+
 function pasteToken(scene, data, index) {
   const token = new TokenMock(scene, `new-${index}`, data.x, data.y);
   token.actorId = data.actorId;

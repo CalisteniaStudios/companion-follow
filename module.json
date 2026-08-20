@@ -2,10 +2,10 @@
   "id": "companion-follow",
   "title": "Companion Follow",
   "description": "A simple, system-agnostic way to make pets, companions, escorts, and other tokens follow a leader, including optional follower transfer when the leader is copied to another Scene.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "url": "https://github.com/CalisteniaStudios/companion-follow",
   "manifest": "https://raw.githubusercontent.com/CalisteniaStudios/companion-follow/main/module.json",
-  "download": "https://github.com/CalisteniaStudios/companion-follow/releases/download/v0.1.0/companion-follow-v0.1.0.zip",
+  "download": "https://github.com/CalisteniaStudios/companion-follow/releases/download/v0.1.1/companion-follow-v0.1.1.zip",
   "authors": [
     {
       "name": "Calistenia Studios",
@@ -19,9 +19,6 @@
   },
   "esmodules": [
     "scripts/companion-follow.mjs"
-  ],
-  "styles": [
-    "styles/companion-follow.css"
   ],
   "languages": [
     {

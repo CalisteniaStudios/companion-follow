@@ -13,9 +13,9 @@ This first release is a beta intended for live-table testing before public distr
 3. Press **F**.
 4. Select a follower and press **Shift + F** to stop following.
 
-You can also use the dog and broken-link buttons in the Token scene controls. In the Token HUD, target or hover a leader and click the dog button on the token that should follow it.
-
 Follow relationships are saved on the tokens and remain active after reloading the world.
+
+Companion Follow intentionally uses only keyboard shortcuts, keeping the Token HUD and scene controls uncluttered. The shortcuts can be changed in Foundry's Configure Controls menu.
 
 ## Cross-Scene copy
 
